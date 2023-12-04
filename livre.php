@@ -64,4 +64,16 @@ class Livre {
 
         return $this;
     }
+
+
+    public function get_author()
+    {
+        return $this->_author;
+    }
+    public function set_author($_author)
+    {
+        $this->_author = $_author;
+
+        return $this;
+    }
 }
