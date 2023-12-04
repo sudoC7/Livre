@@ -6,7 +6,7 @@ class Auteur {
     private $book; 
 
     public function  __construct() {
-        $this->
+        // $this->
     }
 
 
