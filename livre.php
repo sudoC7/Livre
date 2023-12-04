@@ -3,19 +3,43 @@
 class Livre {
     private string $_book;
     private DateTime $_date;
-    private int $_pages;
-    private int $_price;
-    private string $_author;
+    private string $_pages;
+    private string $_price;
+    //private Auteur $_author;
 
 
-
-    public function __construct(string $book, string $date, $pages, $price)
+    public function __construct($book, $date, $pages, $price)
     {
         $this->_book = $book;
         $this->_date = new DateTime($date);
         $this->_pages = $pages;
         $this->_price = $price;
+        // methode d'auteur pour ajouter un livre
+        
     }
+
+
+    public function __toString() {
+        return "<br>".$this->_book." (".$this->_date->format("Y").") :".$this->_pages." pages / ".$this->_price;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     // get & set
     public function get_livre()
@@ -54,7 +78,7 @@ class Livre {
     }
 
 
-    public function get_prix()
+    public function get_prix() : float
     {
         return $this->_price;
     }
@@ -66,14 +90,14 @@ class Livre {
     }
 
 
-    public function get_author()
-    {
-        return $this->_author;
-    }
-    public function set_author($_author)
-    {
-        $this->_author = $_author;
+    // public function get_author()
+    // {
+    //     return $this->_author;
+    // }
+    // public function set_author($_author)
+    // {
+    //     $this->_author = $_author;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 }

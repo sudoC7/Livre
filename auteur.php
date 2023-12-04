@@ -3,13 +3,42 @@
 class Auteur {
     private string $_lastname;
     private string $_firstname;
-    private $_book; 
+    private $_books = []; 
 
-    public function  __construct($lastname, $firstname, $book) {
+
+    public function  __construct($lastname, $firstname) {
         $this->_lastname = $lastname;
         $this->_firstname = $firstname;
-        $this->_book = $book; 
+        $this->_books = []; 
     }
+
+
+    public function __toString(){
+        return $this->_firstname . " ". $this->_lastname;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     //get & set 
     public function get_lastname()
