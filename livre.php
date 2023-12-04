@@ -1,29 +1,30 @@
 <?php
 
 class Livre {
-    private string $_livre;
+    private string $_book;
     private DateTime $_date;
     private int $_pages;
-    private int $_prix;
+    private int $_price;
+    private string $_author;
 
 
 
-    public function __construct(string $livre, string $date, $pages, $prix)
+    public function __construct(string $book, string $date, $pages, $price)
     {
-        $this->_livre = $livre;
+        $this->_book = $book;
         $this->_date = new DateTime($date);
         $this->_pages = $pages;
-        $this->_prix = $prix;
+        $this->_price = $price;
     }
 
     // get & set
     public function get_livre()
     {
-        return $this->_livre;
+        return $this->_book;
     }
-    public function set_livre($_livre)
+    public function set_livre($_book)
     {
-        $this->_livre = $_livre;
+        $this->_book = $_book;
 
         return $this;
     }
@@ -55,11 +56,11 @@ class Livre {
 
     public function get_prix()
     {
-        return $this->_prix;
+        return $this->_price;
     }
-    public function set_prix($_prix)
+    public function set_prix($_price)
     {
-        $this->_prix = $_prix;
+        $this->_price = $_price;
 
         return $this;
     }
