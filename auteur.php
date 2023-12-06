@@ -3,39 +3,22 @@
 class Auteur {
     private string $_lastname;
     private string $_firstname;
-    private $_books = []; 
+    private $_books = []; // je crée un tableau 
 
 
     public function  __construct($lastname, $firstname) {
         $this->_lastname = $lastname;
         $this->_firstname = $firstname;
-        $this->_books = []; 
+        $this->_books = []; // j'initialise le tableau de l'attribut book 
     }
 
-
+    public function addBook(Livre $book){
+       
+       echo $this->_books[] = $book;
+    }
     public function __toString(){
-        return $this->_firstname . " ". $this->_lastname;
+        return $this->_firstname." ".$this->_lastname;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
