@@ -5,23 +5,28 @@ class Auteur {
     private string $_firstname;
     private $_books = []; // je crée un tableau 
 
-
     public function  __construct($lastname, $firstname) {
         $this->_lastname = $lastname;
         $this->_firstname = $firstname;
         $this->_books = []; // j'initialise le tableau de l'attribut book 
     }
 
-    public function addBook(Livre $book){
-       
-       echo $this->_books[] = $book;
+    public function addBook(Livre $book){ 
+        $this->_books[] = $book;//->infoBook();        
     }
+
+    public function afficherBibliographie() {
+        $result = "<h1>Livres de ".$this."</h1>";
+
+        foreach($this->_books as $book) {
+            $result .= $book->infoBook()."<br>";
+        }
+        return $result;
+    }
+
     public function __toString(){
-        return $this->_firstname." ".$this->_lastname;
+        return  $this->_lastname." ".$this->_firstname;
     }
-
-
-
 
     //get & set 
     public function get_lastname()
@@ -52,9 +57,9 @@ class Auteur {
     {
         return $this->_book;
     }
-    public function set_book($_book)
+    public function set_book(Livre $book)
     {
-        $this->_book = $_book;
+        $this->_book = $book;
 
         return $this;
     }

@@ -16,24 +16,15 @@ class Livre {
         $this->_price = $price;
         $this->author = $author;
         $this->author->addBook($this); 
-        // methode d'auteur pour ajouter un livre
-
-        
     }
-
-    public function getInfos() {
-        echo $this->author;
-        
-    } 
+    
+    public function infoBook() { 
+        return $this." : ".$this->_pages." pages / ".$this->_price."€<br>"; 
+    }
 
     public function __toString() {
-        return "<br>".$this->_book." (".$this->_date->format("Y").") ";
+      return $this->_book." (".$this->_date->format("Y").") ";
     }
-
-
-
-
-
 
     // get & set
     public function get_livre()
